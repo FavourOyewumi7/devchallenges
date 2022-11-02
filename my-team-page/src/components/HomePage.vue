@@ -11,7 +11,7 @@
         </span>
     </div>
     <div class="grid-div grid grid-cols-3 grid-rows-2 mt-8">
-        <ImageCard image="photo1.png" title="Bill Mahoney" description="product owner" class="item"/>
+        <ImageCard image="photo1.png" title="Bill Mahoneyssss" description="product owner" class="item"/>
         <ImageCard image="photo2.png" title="Saba Cabrera" description="art director" class="item"/>
         <ImageCard image="photo3.png" title="Shae Le" description="tech lead" class="item"/>
         <ImageCard image="photo4.png" title="Skylah Lu" description="ux designer" class="item"/>
