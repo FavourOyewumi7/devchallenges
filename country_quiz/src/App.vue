@@ -1,34 +1,44 @@
 <template>
  
-  <HomeContainer />
+
+  <NavBar @submitValue = "valueSub" />
+  <ResultsPage :names="this.title" />
+  
  
 </template>
 
 <script>
 
-import HomeContainer from './components/HomeContainer.vue'
+import NavBar from './components/NavBar.vue';
+import ResultsPage from './components/ResultsPage.vue';
 
 export default {
   name: 'App',
   components: {
-   
-    HomeContainer
+   ResultsPage,
+    NavBar
+},
+data(){
+  return{
+    value:'',
+    title:''
+  }
+},
+methods:{
+  valueSub(value){
+    this.title = value
+    console.log(value)
+    console.log(this.title)
+  }
 }
 }
 </script>
 
 <style>
+    
 *{
   margin: 0px;
   padding: 0px;
-}
-#app {
-  
-  width: 100vw;
-  height: 100vh;
-  background-image: url(../src/assets/background.png);
-  background-position:center;
-  background-repeat: no-repeat;
  
 }
 </style>
