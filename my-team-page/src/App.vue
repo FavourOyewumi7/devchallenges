@@ -1,5 +1,7 @@
-<template id="app"  >
-  <HomePage class="homepage "/>
+<template>
+  <div id="app"  >
+    <HomePage class="homepage mx-auto w-screen "/>
+  </div>
 </template>
 
 <script>
@@ -15,18 +17,13 @@ export default {
 </script>
 
 <style>
+*{
+  width: 100%;
+  
+}
 #app{
-  box-sizing: border-box;
-  margin: auto;
-  width: 62%;
-  height: 100vh;
-  padding-top: 4%;
-
-}
-.homepage{
-
-  width: inherit;
-  height: inherit;
   background-color: #FAFAFA;
+  width: fit-content;
 }
+
 </style>

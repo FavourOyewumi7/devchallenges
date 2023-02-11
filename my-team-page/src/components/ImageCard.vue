@@ -1,13 +1,13 @@
 <template>
-  <div class="image-card w-[360px] h-[471px] ">
-    <div class="inline-flex w-[300px] h-[400px]  my-auto">
+  <div class="image-card ">
+    <div class="flex ">
       <div class=" ">
 
-        <img :src="require('@/assets/'+image+'')" alt="" class=" w-[238px] h-[341px]">
+        <img :src="require('@/assets/'+image+'')" alt="" class=" ">
         <h2 class="text-black pt-2">{{title}}</h2>
       </div>
-      <div class="pl-2">
-        <p class="uppercase text-black text">{{description}}</p>
+      <div class="">
+        <p class="uppercase text-black text" >{{description}}</p>
       </div>
     </div>
   
@@ -56,12 +56,11 @@ export default {
     line-height: 27px;
   
   }
-  /*.image-card{
-    border: 2px solid red;
-  }*/
   .text{
+    text-orientation: mixed;
     writing-mode: vertical-rl;
-  text-orientation: mixed;
+    width: 20px;
   }
+  
 ;
 </style>
