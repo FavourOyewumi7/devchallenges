@@ -2,44 +2,50 @@ import { reactive } from "vue";
 
 export const store = reactive({
     location: String,
-    // todos : JSON.parse(localStorage.getItem('todos')),
-    // values : [],
-    // count:1,
-    // todo_count: Number,
+    city: '',
+    country:'',
+    currInformation:'',
+    futureInformation:'',
+    wind:'-',
+    humid:'-',
+    visible:'-' ,
+    pressure:'-' ,
+    currdate:'',
+    condition:'',
     
-    // addTodos(value){
-    //     this.todo = {
-    //         title:value,
-    //         index: this.count++,
-    //         completed: false
-
-    //     }
-
-    //     this.values.push(this.todo)
-    //     localStorage.setItem("todos",JSON.stringify(this.values))
-
-    // }
-    information:'',
-    wind:0,
-    humid:0,
-    visible:0 ,
-    pressure:0 ,
-    
-    fetchData(location){
+    fetchCurrData(location){
         
      fetch(`http://api.weatherapi.com/v1/current.json?key=4f13a835b21142a388f212743231102&q=${location}}&aqi=no`)
     .then((Response) => Response.json())
     .then((data)=>{
         // console.log(data),
-        this.information = data;
-        this.wind=this.information.current.wind_mph,
-        this.humid=this.information.current.humidity,
-        this.visible=this.information.current.vis_miles ,
-        this.pressure=this.information.current.pressure_mb 
+        this.currInformation = data;
+        this.city = this.currInformation.location.region,
+        this.country = this.currInformation.location.country,
+        this.wind=this.currInformation.current.wind_mph,
+        this.humid=this.currInformation.current.humidity,
+        this.visible=this.currInformation.current.vis_miles ,
+        this.pressure=this.currInformation.current.pressure_mb ,
+        this.currdate= this.currInformation.location.localtime,
+        this.condition=this.currInformation.current.condition.text
         
     }
         
     )
-    }
+    },
+
+    fetchFutureData(location){
+        
+        fetch(`http://api.weatherapi.com/v1/forecast.json?key=4f13a835b21142a388f212743231102&q=${location}&days=6&aqi=no&alerts=0`)
+       .then((Response) => Response.json())
+       .then((data)=>{
+            console.log(data)
+           this.futureInformation = data.forecast.forecastday.slice(1)
+           console.log(this.futureInformation)
+           
+       }
+           
+       )
+       }
     
 })
