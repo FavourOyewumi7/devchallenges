@@ -3,10 +3,13 @@ import { reactive } from "vue";
 export const store = reactive({
     location: String,
     city: '',
+    icon:'',
     country:'',
+    currtemp:'',
     currInformation:'',
     futureInformation:'',
     wind:'-',
+    wind_dir:'-',
     humid:'-',
     visible:'-' ,
     pressure:'-' ,
@@ -20,7 +23,7 @@ export const store = reactive({
     .then((data)=>{
         // console.log(data),
         this.currInformation = data;
-        this.city = this.currInformation.location.region,
+        this.city = this.currInformation.location.name,
         this.country = this.currInformation.location.country,
         this.wind=this.currInformation.current.wind_mph,
         this.humid=this.currInformation.current.humidity,
@@ -28,6 +31,9 @@ export const store = reactive({
         this.pressure=this.currInformation.current.pressure_mb ,
         this.currdate= this.currInformation.location.localtime,
         this.condition=this.currInformation.current.condition.text
+        this.currtemp = this.currInformation.current.temp_c,
+        this.wind_dir = this.currInformation.current.wind_dir,
+        this.icon = this.currInformation.current.condition.icon
         
     }
         

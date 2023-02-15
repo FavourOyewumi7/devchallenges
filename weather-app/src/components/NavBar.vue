@@ -1,6 +1,6 @@
 <template>
   <div class=" navbar py-8 h-screen">
-    <div class="flex flex-row justify-between px-12 mb-12">
+    <div class="flex flex-row justify-between px-12 mb-6">
         <button class="px-4 bg-gray text-light" @click="open()">
             Search for Places
         </button>
@@ -12,9 +12,9 @@
               
         </div>
     </div>
-    <div class="flex flex-row my-2 items-center pr-2 val px-12" v-show="hide">
+    <div class="flex flex-row mb-4 items-center pr-2 val px-12" v-show="hide">
         <input type="text" placeholder="Enter Place" v-model="place" class="p-2">
-        <button class="mx-2 py-2 px-2 bg-gray" @click.prevent="submit()">
+        <button class="mx-2 py-2 px-2 bg-button-blue" @click.prevent="submit()">
             Check
         </button>
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#6E707A" class="w-8 h-8" @click="close()">
@@ -22,28 +22,30 @@
         </svg>
           
     </div>
-    <div class="relative h-3/5 ">
+    <div class="relative h-2/5 ">
         <div class="navbar-image  absolute h-fit ">
             
         </div>
         <div class="absolute h-full w-full flex flex-row justify-center px-5">
-            <img src="../assets/Shower.png" alt="" class="">
+            <img :src="'https:'+store.icon" alt="" class="w-[202px] h-[234px]">
         </div>
     </div>
     <div class=" text-center px-12">
         <div class="text-light flex flex-col justify-center">
 
             
-            <h1>
+            <h1 class=" ">
+                <span class="text-9xl text-light">{{ store.currtemp }}</span>
+                <span class="text-dark text-5xl">&#176; C</span>
 
             </h1>
 
 
-            <p class="my-5 text-4xl text-gray">
+            <p class="my-8 text-4xl text-gray font-semibold ">
                 {{ store.condition }}
             </p>
 
-            <div class="flex flex-row justify-center my-5  ">
+            <div class="flex flex-row justify-center my-5 text-lightgray ">
                 <p class="pr-2">Today</p>
                 <p class="pr-2"> . </p>
                 <p>
@@ -108,7 +110,7 @@ export default {
         this.new_day = new_date_1.getDay()
         this.new_month = new_date_1.getMonth()
         this.new_date = new_date_1.getDate()
-        console.log(this.new_date,this.new_day,this.new_month)
+       
     },
     methods:{
         open(){
@@ -116,7 +118,7 @@ export default {
             gsap.fromTo(
                 '.val',{
                     opacity: 0,
-                    y: '100%',
+                    y: '50%',
                 },
                 {
                     duration: 1.5,

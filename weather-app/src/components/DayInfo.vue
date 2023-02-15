@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-row gap-4 mx-12 my-8">
+  <div class="flex flex-row justify-center gap-4 mx-12 my-8">
       <DayInfoCard v-for="day in store.futureInformation" :key="day.id" :weather="day" />
   </div>
 </template>
