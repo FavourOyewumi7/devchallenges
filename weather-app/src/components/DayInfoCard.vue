@@ -6,8 +6,8 @@
                 <img  alt="" class="w-[56px] h-[62px]" :src="'https:'+ weather.day.condition.icon">
             </div>
             <div class="flex flex-row justify-between pt-4 leading-3">
-                <span class="text-light pr-4"> {{this.up }}<span>&#176;</span>C </span>
-                <span class="text-dark "> {{ this.down  }} <span>&#176;</span>C </span>
+                <span class="text-light pr-4"> {{Math.round(this.weather.day.maxtemp_c) }}<span>&#176;</span>C </span>
+                <span class="text-dark "> {{ Math.round(this.weather.day.mintemp_c) }} <span>&#176;</span>C </span>
             </div>
         </div>
     </div>
@@ -56,8 +56,7 @@ export default {
         this.new_day = new_date_1.getDay()
         this.new_month = new_date_1.getMonth()
         this.new_date = new_date_1.getDate()
-        this.up = Math.round(this.weather.day.maxtemp_c)
-        this.down = Math.round(this.weather.day.mintemp_c)
+      
         
     
 
