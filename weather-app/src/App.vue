@@ -1,7 +1,7 @@
 <template>
-  <div class="sm:grid sm:grid-cols-4 flex flex-col">
+  <div class="lg:grid lg:grid-cols-4 md:grid md:grid-cols-3 flex flex-col">
     <NavBar  />
-    <BodyBar class="col-span-3" />
+    <BodyBar class="lg:col-span-3 md:col-span-2" />
   </div>
 </template>
 

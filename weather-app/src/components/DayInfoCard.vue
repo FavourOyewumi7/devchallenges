@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-blue py-4 px-4 flex flex-row justify-center mx-5">
+    <div class="bg-blue py-4 px-4 flex flex-row justify-center mx-2">
         <div class="" >
             <p class="text-center font-medium text-base"> {{ this.days[this.new_day]}}, {{ this.new_date }} {{ this.months[this.new_month] }} </p>
             <div class="flex flex-row justify-center p-4">

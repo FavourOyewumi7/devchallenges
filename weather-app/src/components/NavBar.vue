@@ -1,7 +1,7 @@
 <template>
-  <div class=" navbar py-8 h-screen">
-    <div class="flex flex-row justify-between px-12 mb-6">
-        <button class="px-4 bg-gray text-light" @click="open()">
+  <div class=" navbar py-8 lg:h-full">
+    <div class="flex flex-row justify-between px-4 mb-6">
+        <button class="px-4 bg-gray text-light " @click="open()">
             Search for Places
         </button>
 
@@ -12,9 +12,9 @@
               
         </div>
     </div>
-    <div class="flex flex-row mb-4 items-center pr-2 val px-12" v-show="hide">
-        <input type="text" placeholder="Enter Place" v-model="place" class="p-2">
-        <button class="mx-2 py-2 px-2 bg-button-blue" @click.prevent="submit()">
+    <div class="flex flex-row md:flex-col xl:flex-row mb-4 items-center pr-2 val px-4" v-show="hide">
+        <input type="text" placeholder="Enter Place" v-model="place" class="p-2 bg-blue text-light border border-1">
+        <button class="mx-2 py-2 my-2 px-2 bg-button-blue" @click.prevent="submit()">
             Check
         </button>
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#6E707A" class="w-8 h-8" @click="close()">

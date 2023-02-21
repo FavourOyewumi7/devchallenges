@@ -1,7 +1,7 @@
 <template>
-    <div class="w-screen text-light mx-8 my-4   ">
+    <div class="w-full text-light mx-8 my-4    ">
         <h2 class="font-bold text-2xl">Today's Highlight</h2>
-        <div class="sm:grid sm:grid-cols-2 sm:grid-rows-2 gap-4 flex flex-col  m-4">
+        <div class="lg:grid lg:grid-cols-2  gap-2 flex flex-col  m-4">
             <div class="bg-blue py-12 flex flex-row justify-center ">
                 <div>
                     <h4 class="text-sm text-center">
@@ -31,7 +31,7 @@
                         <span class="text-6xl font-bold"> {{ store.humid }} </span> <span class="text-5xl">%</span>
                     </p>
 
-                    <progress  :value="store.humid" max="100" class="progress-bar mt-5"> </progress>
+                    <progress  :value="store.humid" max="100" class="progress-bar mt-5 px-2"> </progress>
                 </div>
                 
                 
