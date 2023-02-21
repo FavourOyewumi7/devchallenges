@@ -18,7 +18,7 @@ export const store = reactive({
     
     fetchCurrData(location){
     try{
-     fetch(`http://api.weatherapi.com/v1/current.json?key=4f13a835b21142a388f212743231102&q=${location}}&aqi=no`)
+     fetch(`https://api.weatherapi.com/v1/current.json?key=4f13a835b21142a388f212743231102&q=${location}}&aqi=no`)
     .then((Response) => Response.json())
     .then((data)=>{
         // console.log(data),
@@ -43,7 +43,7 @@ export const store = reactive({
 
     fetchFutureData(location){
         
-        fetch(`http://api.weatherapi.com/v1/forecast.json?key=4f13a835b21142a388f212743231102&q=${location}&days=6&aqi=no&alerts=0`)
+        fetch(`https://api.weatherapi.com/v1/forecast.json?key=4f13a835b21142a388f212743231102&q=${location}&days=6&aqi=no&alerts=0`)
        .then((Response) => Response.json())
        .then((data)=>{
            this.futureInformation = data.forecast.forecastday.slice(1)
