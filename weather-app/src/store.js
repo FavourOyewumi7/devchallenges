@@ -15,7 +15,9 @@ export const store = reactive({
     pressure:'-' ,
     currdate:'',
     condition:'',
-    
+    long:'',
+    lat:'',
+    place:'',
     fetchCurrData(location){
     try{
      fetch(`https://api.weatherapi.com/v1/current.json?key=4f13a835b21142a388f212743231102&q=${location}}&aqi=no`)
@@ -52,6 +54,28 @@ export const store = reactive({
        }
            
        )
+       },
+       fetchCity(){
+               
+          fetch(`https://api.geoapify.com/v1/geocode/reverse?lat=${this.lat}&lon=${this.long}&apiKey=5fb905cf9b69441bb7a7bf44e0507c89`)
+            .then((response) => response.json())
+            .then((data) => {
+                this.fetchCurrData(data.features[0].properties.city)
+                this.fetchFutureData(data.features[0].properties.city)}
+                 )
+       },
+       fetchLocation(){
+        if(navigator.geolocation){
+            navigator.geolocation.getCurrentPosition((position)=>{
+                this.long = position.coords.longitude
+                this.lat = position.coords.latitude
+                this.fetchCity()
+                
+            })
+
+        }else{
+            alert('This browser does not support Geolocation')
+        }
        }
     
 })

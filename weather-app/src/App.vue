@@ -8,11 +8,20 @@
 <script>
 import NavBar from './components/NavBar.vue';
 import BodyBar from './components/BodyBar.vue';
+import { store } from './store';
 export default {
   name: 'App',
   components: {
     NavBar,
     BodyBar
+  },
+  data(){
+    return{
+      store
+    }
+  },
+  created(){
+    store.fetchLocation()
   }
 }
 </script>
