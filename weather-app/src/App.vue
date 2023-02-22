@@ -20,9 +20,7 @@ export default {
       store
     }
   },
-  created(){
-    store.fetchLocation()
-  }
+  
 }
 </script>
 
